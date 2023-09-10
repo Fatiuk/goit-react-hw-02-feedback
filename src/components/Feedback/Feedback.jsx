@@ -42,6 +42,7 @@ export default class Feedback extends Component {
         ></Options>
         {totalFeedbacks !== 0 ? (
           <Statistics
+            title="Statistics 📊"
             good={good}
             neutral={neutral}
             bad={bad}

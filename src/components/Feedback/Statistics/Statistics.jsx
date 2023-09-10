@@ -1,7 +1,12 @@
 import React from 'react';
-import { StatisticsWrap, StatisticsList } from './Statistics.styled';
+import {
+  StatisticsWrap,
+  StatisticsTitle,
+  StatisticsList,
+} from './Statistics.styled';
 
 const Statistics = ({
+  title,
   good,
   neutral,
   bad,
@@ -10,6 +15,7 @@ const Statistics = ({
 }) => {
   return (
     <StatisticsWrap>
+      <StatisticsTitle>{title}</StatisticsTitle>
       <StatisticsList>
         <li>😄 Good: {good}</li>
         <li>😐 Neutral: {neutral}</li>
