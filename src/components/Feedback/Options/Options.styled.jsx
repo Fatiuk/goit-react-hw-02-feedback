@@ -10,7 +10,7 @@ export const FeedbackBtn = styled.button`
   cursor: pointer;
   padding: 8px 20px;
   text-transform: capitalize;
-  font-weight: 600;
+
   color: #464748;
   background-color: #fcfcfc;
   border: 0.1px solid black;

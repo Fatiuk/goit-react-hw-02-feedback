@@ -1,13 +1,23 @@
 import React from 'react';
-import { StatisticsList } from './Statistics.styled';
+import { StatisticsWrap, StatisticsList } from './Statistics.styled';
 
-const Statistics = ({ good, neutral, bad }) => {
+const Statistics = ({
+  good,
+  neutral,
+  bad,
+  totalFeedbacks,
+  positivePercentage,
+}) => {
   return (
-    <StatisticsList>
-      <li>😄 Good: {good}</li>
-      <li>😐 Neutral: {neutral}</li>
-      <li>😞 Bad: {bad}</li>
-    </StatisticsList>
+    <StatisticsWrap>
+      <StatisticsList>
+        <li>😄 Good: {good}</li>
+        <li>😐 Neutral: {neutral}</li>
+        <li>😞 Bad: {bad}</li>
+      </StatisticsList>
+      <p>Total feedbacks: {totalFeedbacks} units</p>
+      <p>Positive feedback: {positivePercentage}%</p>
+    </StatisticsWrap>
   );
 };
 
