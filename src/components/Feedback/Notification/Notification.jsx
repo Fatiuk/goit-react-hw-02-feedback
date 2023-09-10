@@ -1,14 +1,10 @@
 import React from 'react';
-import { OptionsWrap } from './Statistics.styled';
+import { NotilicationText } from './Notilication.styled';
 
-const Notilication = ({ options }) => {
+const Notilication = ({ message }) => {
   return (
     <>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta illum
-        aut amet sunt consequatur eaque blanditiis facere accusamus. Hic illum
-        deleniti ullam laborum repellendus omnis autem totam. Itaque, in quo!
-      </p>
+      <NotilicationText>{message}</NotilicationText>
     </>
   );
 };

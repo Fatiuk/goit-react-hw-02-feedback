@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import Options from './Options/Options';
 // ============ Statistics ============
 import Statistics from './Statistics/Statistics';
+// ============ Statistics ============
+import Notification from './Notification/Notification';
 
 export default class Feedback extends Component {
   state = {
@@ -38,13 +40,17 @@ export default class Feedback extends Component {
           options={options}
           onLeaveFeedback={this.onLeaveFeedback}
         ></Options>
-        <Statistics
-          good={good}
-          neutral={neutral}
-          bad={bad}
-          totalFeedbacks={totalFeedbacks}
-          positivePercentage={positivePercentage}
-        ></Statistics>
+        {totalFeedbacks !== 0 ? (
+          <Statistics
+            good={good}
+            neutral={neutral}
+            bad={bad}
+            totalFeedbacks={totalFeedbacks}
+            positivePercentage={positivePercentage}
+          ></Statistics>
+        ) : (
+          <Notification message="Unfortunately, we don't have any feedback at the moment. 😔"></Notification>
+        )}
       </>
     );
   }
