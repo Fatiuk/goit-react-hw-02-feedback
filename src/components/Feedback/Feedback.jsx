@@ -6,9 +6,13 @@ import Statistics from './Statistics/Statistics';
 
 export default class Feedback extends Component {
   state = {
-    good: 50,
-    neutral: 80,
-    bad: 10,
+    good: 0,
+    neutral: 0,
+    bad: 0,
+  };
+
+  onLeaveFeedback = state => {
+    this.setState(prevState => ({ [state]: prevState[state] + 1 }));
   };
 
   // A function that counts the total number of votes (feedbacks)
@@ -30,7 +34,10 @@ export default class Feedback extends Component {
     const positivePercentage = this.countPositiveFeedbackPercentage();
     return (
       <>
-        <Options options={options}></Options>
+        <Options
+          options={options}
+          onLeaveFeedback={this.onLeaveFeedback}
+        ></Options>
         <Statistics
           good={good}
           neutral={neutral}
