@@ -1,16 +1,14 @@
-export const App = () => {
+// ============ Section ============
+import Section from './Section/Section';
+// ============ Feedback ============
+import Feedback from './Feedback/Feedback';
+
+const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+    <Section title="Please live feedback">
+      <Feedback></Feedback>
+    </Section>
   );
 };
+
+export default App;
