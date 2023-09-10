@@ -22,7 +22,21 @@ const Statistics = ({
         <li>😞 Bad: {bad}</li>
       </StatisticsList>
       <p>Total feedbacks: {totalFeedbacks} units</p>
-      <p>Positive feedback: {positivePercentage}%</p>
+      <p>
+        Positive feedback:
+        <span
+          style={{
+            color:
+              positivePercentage <= 33
+                ? 'red'
+                : positivePercentage <= 66
+                ? 'orange'
+                : 'green',
+          }}
+        >
+          {positivePercentage}%
+        </span>
+      </p>
     </StatisticsWrap>
   );
 };
